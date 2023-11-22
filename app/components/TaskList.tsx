@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import NewTask from './NewTask';
 import TaskItem from './TaskItem';
 import { collection, query, onSnapshot, doc, updateDoc, addDoc, deleteDoc, orderBy, serverTimestamp } from 'firebase/firestore';
-import { db } from '../firebase/firebase';
+import { db } from './Firebase/firebase';
 
 
 //import { v4 as uuidv4 } from 'uuid';
@@ -78,7 +78,7 @@ const TaskList = () => {
     };
 
     //Toggle Complete
-    const toggleComplete =async (id: string) => {
+    const toggleComplete = async (id: string) => {
       try{
         // Find the task to be updated in the local state
         const taskToToggle = tasks.find(task => task.id === id);

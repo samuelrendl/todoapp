@@ -2,8 +2,6 @@
 
 import { initializeApp } from "firebase/app";
 
-import { getAnalytics } from "firebase/analytics";
-
 import { getFirestore } from "firebase/firestore";
 
 
@@ -18,19 +16,19 @@ import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
 
-  apiKey: "AIzaSyBegLsvXa4ltYl-subKn6fPM_OBlqN_KOM",
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
 
-  authDomain: "to-do-app-1a0af.firebaseapp.com",
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
 
-  projectId: "to-do-app-1a0af",
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
 
-  storageBucket: "to-do-app-1a0af.appspot.com",
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
 
-  messagingSenderId: "581299701567",
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
 
-  appId: "1:581299701567:web:6454129720653c8ee2b58a",
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 
-  measurementId: "G-Q08YDKY5EL"
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
 
 };
 
@@ -38,7 +36,5 @@ const firebaseConfig = {
 // Initialize Firebase
 
 const app = initializeApp(firebaseConfig);
-
-const analytics = getAnalytics(app);
 
 export const db = getFirestore(app);
