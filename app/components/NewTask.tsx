@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 
 type AddTaskProps = {
-    addTask: (text: string) => void;
+    createTask: (text: string) => void;
 };
 
-const NewTask: React.FC<AddTaskProps> = ({addTask}) => {
+const NewTask: React.FC<AddTaskProps> = ({createTask}) => {
 
     const [text, setText] = useState('');
 
@@ -15,7 +15,7 @@ const NewTask: React.FC<AddTaskProps> = ({addTask}) => {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if(!text.trim()) return;
-        addTask(text);
+        createTask(text);
         setText('');
         
     };
