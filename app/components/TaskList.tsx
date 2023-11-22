@@ -123,7 +123,7 @@ const TaskList = () => {
 
     return(
         <div>
-            <h1>To-Do List</h1>
+            
             <NewTask createTask={createTask} />
             {tasks.map((task) => (
                 <TaskItem
